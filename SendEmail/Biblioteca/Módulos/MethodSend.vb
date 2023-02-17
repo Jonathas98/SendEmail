@@ -19,7 +19,7 @@ Module MethodSend
 
             End Using
         Catch ex As Exception
-            MessageBox.Show("Erro ao realizar a leitura do arquivo")
+            MessageBox.Show($"Erro ao realizar a leitura do arquivo{vbNewLine}Erro:{ex.message}","Erro", Messageboxbutton.ok, MessageboxIcon.Error)
         End Try
         Return True
     End Function
@@ -35,10 +35,10 @@ Module MethodSend
             outMsg.To = strEmailDestino
 
             outMsg.Send()
-            MessageBox.Show("Email enviado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Email enviado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         Catch ex As Exception
-            MessageBox.Show("Erro ao enviar Email" + vbNewLine + "Erro: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show($"Erro ao enviar Email {vbNewLine} Erro:{ex.Message}, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
